@@ -47,4 +47,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fadeElements = document.querySelectorAll('.fade-in-up');
     fadeElements.forEach(el => observer.observe(el));
+
+    // Modal Logic
+    const modal = document.getElementById('expoModal');
+    const openBtns = document.querySelectorAll('.open-modal-btn');
+    const closeBtn = document.querySelector('.modal-close');
+
+    if (modal) {
+        openBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                modal.classList.add('active');
+            });
+        });
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+            });
+        }
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+    }
 });
