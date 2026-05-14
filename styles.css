@@ -587,12 +587,13 @@ h1, h2, h3, h4, .logo {
         height: 44px;
         font-size: 1.1rem;
     }
+}
 
-    /* --- New Mobile Pro Features --- */
-    
+/* --- New Mobile Pro Features (Applied to all Mobile) --- */
+@media (max-width: 768px) {
     /* Search Simulation */
     .search-simulation {
-        display: none;
+        display: flex;
         background: var(--light);
         border: 1px solid var(--border);
         border-radius: 16px;
@@ -607,7 +608,7 @@ h1, h2, h3, h4, .logo {
 
     /* Category Grid */
     .category-grid {
-        display: none;
+        display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 0.75rem;
         margin-bottom: 2.5rem;
@@ -635,34 +636,30 @@ h1, h2, h3, h4, .logo {
         color: var(--dark);
     }
 
-    @media (max-width: 768px) {
-        .search-simulation { display: flex; }
-        .category-grid { display: grid; }
-        
-        /* Horizontal Testimonial Slider */
-        .steps-grid {
-            display: flex !important;
-            flex-direction: row !important;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 1rem;
-            padding: 1rem 0.25rem 2rem;
-            margin: 0 -1.25rem;
-            padding-left: 1.25rem;
-            scrollbar-width: none; /* Hide scrollbar Firefox */
-        }
-        
-        .steps-grid::-webkit-scrollbar { display: none; } /* Hide scrollbar Chrome/Safari */
-        
-        .testimonial-card {
-            min-width: 85vw;
-            scroll-snap-align: center;
-            height: auto;
-        }
+    /* Horizontal Testimonial Slider */
+    .steps-grid {
+        display: flex !important;
+        flex-direction: row !important;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding: 1rem 0.25rem 2rem;
+        margin: 0 -1.25rem;
+        padding-left: 1.25rem;
+        scrollbar-width: none;
+    }
+    
+    .steps-grid::-webkit-scrollbar { display: none; }
+    
+    .testimonial-card {
+        min-width: 85vw;
+        scroll-snap-align: center;
+        height: auto;
     }
 
     /* Sticky Bottom CTA */
     .sticky-cta {
+        display: block;
         position: fixed;
         bottom: -100px;
         left: 0;
@@ -673,11 +670,6 @@ h1, h2, h3, h4, .logo {
         padding: 1rem 0;
         z-index: 1500;
         transition: all 0.5s var(--ease-out);
-        display: none;
-    }
-
-    @media (max-width: 768px) {
-        .sticky-cta { display: block; }
     }
 
     .sticky-cta.visible {
@@ -712,6 +704,7 @@ h1, h2, h3, h4, .logo {
         font-size: 0.9rem;
     }
 }
+
 
 
 
