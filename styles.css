@@ -474,20 +474,13 @@ h1, h2, h3, h4, .logo {
         padding: 0 1.25rem;
     }
 
-    /* Floating Island Navbar - More Compact */
+    /* Hide Navbar on Mobile */
     .navbar {
-        top: 0.75rem;
-        width: 92%;
-        padding: 0.6rem 0;
-        background: rgba(255, 255, 255, 0.85);
-        border: 1px solid rgba(0, 0, 0, 0.05);
+        display: none !important;
     }
 
-    .navbar.scrolled {
-        top: 0;
-        width: 100%;
-        border-radius: 0;
-        border-bottom: 1px solid var(--border);
+    .mobile-logo {
+        display: block !important;
     }
 
     .section {
@@ -505,7 +498,7 @@ h1, h2, h3, h4, .logo {
 
     /* Hero Mobile - "App Store" Style */
     .hero {
-        padding: 7rem 0 3rem;
+        padding: 4rem 0 3rem;
         min-height: auto;
         display: flex;
         align-items: center;
