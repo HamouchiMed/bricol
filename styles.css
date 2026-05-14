@@ -745,7 +745,117 @@ h1, h2, h3, h4, .logo {
 
 
 
-/* --- Premium Testimonials --- */
+/* --- App Previews Section --- */
+.app-preview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 4rem;
+}
+
+.app-preview-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.app-preview-content {
+    margin-bottom: 3rem;
+    max-width: 400px;
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background: rgba(37, 99, 235, 0.1);
+    color: var(--primary);
+    border-radius: 99px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.app-preview-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.app-preview-content p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* Phone Mockup Styling */
+.phone-mockup-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.phone-mockup {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 19;
+    background: #000;
+    border-radius: 48px;
+    padding: 12px;
+    box-shadow: 0 50px 100px -20px rgba(0,0,0,0.25), 0 30px 60px -30px rgba(0,0,0,0.3);
+    border: 8px solid #1a1a1a;
+    overflow: hidden;
+    transition: var(--transition-base);
+}
+
+.phone-mockup:hover {
+    transform: translateY(-20px) scale(1.05);
+    box-shadow: 0 70px 120px -20px rgba(37, 99, 235, 0.2);
+}
+
+/* Inner shadow and reflection */
+.phone-mockup::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.app-screen {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 36px;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .app-preview-grid {
+        grid-template-columns: 1fr;
+        gap: 6rem;
+    }
+    
+    .app-preview-content h3 {
+        font-size: 1.75rem;
+    }
+
+    .phone-mockup {
+        border-radius: 36px;
+        padding: 8px;
+        border-width: 6px;
+    }
+
+    .app-screen {
+        border-radius: 26px;
+    }
+}
+
 .testimonial-card {
     background: var(--white);
     padding: 3rem 2.5rem;
