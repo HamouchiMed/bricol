@@ -85,6 +85,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Sticky CTA Toggle on Scroll ---
+    const stickyCta = document.querySelector('.sticky-cta');
+    if (stickyCta) {
+        window.addEventListener('scroll', () => {
+            // Show sticky CTA after scrolling down 500px
+            if (window.scrollY > 500) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
+        });
+    }
+
     // --- Smooth Scrolling for all links ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
